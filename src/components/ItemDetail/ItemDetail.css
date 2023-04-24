@@ -1,0 +1,15 @@
+.itemDetail {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.titulos {
+    color: black;
+}
+
+.imgDetail {
+    width: 500px;
+}

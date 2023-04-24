@@ -9,7 +9,6 @@
     padding-right: 20px;
 }
 .navbar__links {
-    color: aliceblue;
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -17,7 +16,10 @@
     font-family: "Bebas Neue", cursive;
     font-size: 2em;
 }
-
+.navbar__li {
+    text-decoration: none;
+    color: aliceblue;
+}
 .navbar__li:hover {
     text-decoration: overline 10px;
 }
