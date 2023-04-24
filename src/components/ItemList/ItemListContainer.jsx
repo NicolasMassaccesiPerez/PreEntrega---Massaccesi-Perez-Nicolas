@@ -9,17 +9,17 @@ import { useParams } from "react-router-dom";
 export const ItemListContainer = () => {
     const [items, setItems] = useState([]);
 
-    const { categoryName } = useParams();
+    const { category } = useParams();
 
     useEffect(() => {
-        const productsFiltered = products.filter((prod) => prod.category === categoryName);
+        const productosFiltered = products.filter((prod) => prod.category === category);
 
         const tarea = new Promise((resolve, reject) => {
-            resolve(categoryName ? productsFiltered : products);
+            resolve(category ? productosFiltered : products);
         });
 
         tarea.then((res) => setItems(res)).catch((error) => console.log(error));
-    }, [categoryName]);
+    }, [category]);
 
     return (
         <div>
