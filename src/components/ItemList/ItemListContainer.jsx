@@ -14,8 +14,8 @@ export const ItemListContainer = () => {
     useEffect(() => {
         const productosFiltered = products.filter((prod) => prod.category === category);
 
-        const tarea = new Promise((resolve, reject) => {
-            resolve(category ? productosFiltered : products);
+        const tarea = new Promise((resuelta, rechazada) => {
+            resuelta(category ? productosFiltered : products);
         });
 
         tarea.then((res) => setItems(res)).catch((error) => console.log(error));
