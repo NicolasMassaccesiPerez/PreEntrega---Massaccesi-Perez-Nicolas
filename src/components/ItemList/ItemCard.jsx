@@ -11,8 +11,8 @@ const ItemCard = ({ item }) => {
             <hr />
             <CardContent
                 sx={{
-                    height: 120,
-                    backgroundColor: "withe",
+                    height: 80,
+                    backgroundColor: "white",
                     padding: "0",
                     display: "flex",
                     alignItems: "center",
@@ -23,6 +23,7 @@ const ItemCard = ({ item }) => {
                     {item.title}
                 </Typography>
             </CardContent>
+            <hr />
             <CardActions style={{ display: "flex", justifyContent: "space-between", marginLeft: "10px" }}>
                 <Link to={`/itemDetail/${item.id}`}>
                     <Button variant="contained" style={{ backgroundColor: "green" }} size="small" sx={{ textTransform: "none" }}>

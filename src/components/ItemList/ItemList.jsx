@@ -9,7 +9,7 @@ const ItemList = ({ items }) => {
                 flexWrap: "wrap",
                 minHeight: "50vh",
                 padding: "40px",
-                gap: "10px",
+                gap: "30px",
                 backgroundImage: `url("https://res.cloudinary.com/dwavbmsb2/image/upload/v1682457379/Urban_landscape_fence_sv3fan.webp")`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
