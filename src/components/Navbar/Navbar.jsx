@@ -1,8 +1,19 @@
 import { Cartwidget } from "../Cartwidget/Cartwidget";
 import UrbanOutfitters from "../../assets/img/UrbanOutfitters.png";
 import { Outlet, Link, NavLink } from "react-router-dom";
+import React, { useState } from "react";
 import "./Navbar.css";
+
 export const Navbar = () => {
+    const [isCartDropdownOpen, setIsCartDropdownOpen] = useState(false);
+
+    const handleCartWidgetMouseEnter = () => {
+        setIsCartDropdownOpen(true);
+    };
+
+    const handleCartWidgetMouseLeave = () => {
+        setIsCartDropdownOpen(false);
+    };
     return (
         <div className="navbar__cartwidget">
             <div>
@@ -25,9 +36,9 @@ export const Navbar = () => {
                             Pantalones
                         </NavLink>
                     </ul>
-                    <Cartwidget />
+                    <Cartwidget onMouseEnter={handleCartWidgetMouseEnter} onMouseLeave={handleCartWidgetMouseLeave} />
                 </div>
-
+                {isCartDropdownOpen && <div className="cart-dropdown open">{/* Contenido del menú desplegable */}</div>}
                 <Outlet />
             </div>
         </div>

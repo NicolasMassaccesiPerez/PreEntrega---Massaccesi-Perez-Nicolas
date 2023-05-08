@@ -2,24 +2,40 @@ import Carousel from "../Carousel/Carousel";
 import "./ItemListContainer.css";
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
-import { products } from "../../productsMock";
-
+import { database } from "../../firebaseConfig";
+import { getDocs, collection, query, where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 
 export const ItemListContainer = () => {
     const [items, setItems] = useState([]);
 
-    const { category } = useParams();
+    const { categoryName } = useParams();
 
     useEffect(() => {
-        const productosFiltered = products.filter((prod) => prod.category === category);
+        let consulta;
+        const itemCollection = collection(database, "products");
 
-        const tarea = new Promise((resuelta, rechazada) => {
-            resuelta(category ? productosFiltered : products);
-        });
+        if (categoryName) {
+            const itemsCollectionFiltered = query(itemCollection, where("category", "==", categoryName));
+            consulta = itemsCollectionFiltered;
+        } else {
+            consulta = itemCollection;
+        }
 
-        tarea.then((res) => setItems(res)).catch((error) => console.log(error));
-    }, [category]);
+        getDocs(consulta)
+            .then((res) => {
+                const products = res.docs.map((product) => {
+                    return {
+                        ...product.data(),
+                        id: product.id,
+                    };
+                });
+
+                setItems(products);
+            })
+
+            .catch((err) => console.log(err));
+    }, [categoryName]);
 
     return (
         <div>

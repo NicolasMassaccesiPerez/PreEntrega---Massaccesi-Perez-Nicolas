@@ -6,7 +6,15 @@ import { Link } from "react-router-dom";
 
 const ItemCard = ({ item }) => {
     return (
-        <Card sx={{ width: 350, height: 440, boxShadow: "2px 4px 5px", transition: "0.2s", "&:hover": { transform: "scale(1.05)" } }}>
+        <Card
+            sx={{
+                width: 350,
+                height: 380,
+                boxShadow: "2px 4px 5px",
+                transition: "0.2s",
+                "&:hover": { transform: "scale(1.05)", height: "450px" },
+            }}
+        >
             <CardMedia sx={{ height: 240, backgroundSize: "contain" }} image={item.img} title="producto" />
             <hr />
             <CardContent
