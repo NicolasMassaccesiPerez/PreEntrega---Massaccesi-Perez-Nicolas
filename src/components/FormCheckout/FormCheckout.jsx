@@ -3,7 +3,8 @@ import React from "react";
 
 const FormCheckout = ({ handleSubmit, handleChange, errors, values }) => {
     return (
-        <div style={{ paddingTop: "50px" }}>
+        <div style={{ paddingTop: "100px" }}>
+            <h2 style={{ color: "black", marginBottom: "30px" }}>Completa el formulario de compra con tus datos:</h2>
             <form action="" onSubmit={handleSubmit}>
                 <Grid container spacing={2} flex justifyContent={"center"}>
                     <Grid item xs={11} sm={7}>
@@ -44,8 +45,8 @@ const FormCheckout = ({ handleSubmit, handleChange, errors, values }) => {
                     </Grid>
 
                     <Grid item xs={6}>
-                        <Button type="submit" variant="contained" sx={{ marginTop: 2 }}>
-                            Comprar
+                        <Button type="submit" variant="contained" sx={{ marginTop: 2, marginBottom: 24 }}>
+                            Enviar Datos
                         </Button>
                     </Grid>
                 </Grid>

@@ -6,7 +6,6 @@ import { Navbar } from "./components/Navbar/Navbar";
 import CartContainer from "./components/Cart/CartContainer";
 import Footer from "./components/Footer/Footer";
 import CartContextProvider from "./context/CartContext";
-import Form from "./components/Form/Form";
 import { FormCheckoutContainer } from "./components/FormCheckout/FormCheckoutContainer";
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
                         <Route path="/category/:category" element={<ItemListContainer />} />
                         <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
                         <Route path="/cart" element={<CartContainer />} />
-                        <Route path="/form" element={<Form />} />
                         <Route path="/checkout" element={<FormCheckoutContainer />} />
                         <Route path="*" element={<h1>Error 404 NOT FOUND</h1>} />
                     </Route>

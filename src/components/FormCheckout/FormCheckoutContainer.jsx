@@ -52,9 +52,24 @@ export const FormCheckoutContainer = () => {
     });
 
     return (
-        <div>
+        <div
+            style={{
+                backgroundColor: "white",
+                height: "600px",
+                margin: "auto auto",
+                display: "flex",
+                justifyContent: "center",
+            }}
+        >
+            <img
+                src="https://res.cloudinary.com/dwavbmsb2/image/upload/v1684184380/GRACIAS_POR_TU_COMPRA-removebg-preview_z3ns7m.png"
+                alt=""
+            />
             {orderId ? (
-                <h1>Gracias por tu compra el numero comprar es {orderId} por favor guardalo para cualquier cosa</h1>
+                <h2 style={{ color: "black", padding: "150px" }}>
+                    Gracias por tu compra! <br /> a continuacion te vamos a dar el codigo de orden, guardalo bien ! <br /> <br /> Codigo:{" "}
+                    {orderId}{" "}
+                </h2>
             ) : (
                 <FormCheckout errors={errors} handleChange={handleChange} handleSubmit={handleSubmit} values={values} />
             )}
