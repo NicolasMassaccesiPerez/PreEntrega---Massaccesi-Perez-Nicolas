@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ItemDetail } from "./ItemDetail";
+import { useParams } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
+import Swal from "sweetalert2";
 import { database } from "../../firebaseConfig";
 import { getDoc, collection, doc } from "firebase/firestore";
-import { useParams } from "react-router-dom";
 
 export const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
-
+    const { agregarAlCarrito, getQuantityById } = useContext(CartContext);
     const { id } = useParams();
 
     useEffect(() => {
@@ -21,10 +23,27 @@ export const ItemDetailContainer = () => {
             )
             .catch((err) => console.log(err));
     }, [id]);
+    const onAdd = (cantidad) => {
+        let data = {
+            ...product,
+            quantity: cantidad,
+        };
+
+        agregarAlCarrito(data);
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: `Producto agregado`,
+            showConfirmButton: true,
+            timer: 1500,
+        });
+    };
+
+    let cantidadTotal = getQuantityById(product.id);
 
     return (
         <div>
-            <ItemDetail product={product} />
+            <ItemDetail product={product} onAdd={onAdd} cantidadTotal={cantidadTotal} />
         </div>
     );
 };

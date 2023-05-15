@@ -8,10 +8,10 @@
     height: 50px;
 }
 
-.cartwidget span {
+.bubble-counter {
     position: absolute;
-    top: -5px;
-    right: -5px;
+    top: 65px;
+    right: 5px;
     width: 28px;
     height: 28px;
     border-radius: 50%;

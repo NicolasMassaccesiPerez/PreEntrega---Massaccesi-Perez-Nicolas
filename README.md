@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+!["UrbanOutfitters Logo"](https://res.cloudinary.com/dwavbmsb2/image/upload/v1684178280/Urban_jynyon.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción del proyecto:
 
-## Available Scripts
+BEYOND IMAGINATION nace del crecimiento del mundo de la programación buscando ser una academia de aprendizaje online competente tanto en nivel como así también en precios. El proyecto cuenta con un sistema de compra funcional con restado de stock en tiempo real.
 
-In the project directory, you can run:
+<p align="center">
+<══════════════════════════════════════════════════════>
+</p>
 
-### `npm start`
+## Clonar repositorio:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Copiar el siguiente comando en consola y luego presionar enter.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+git clone https://github.com/NicolasMassaccesiPerez/PreEntrega---Massaccesi-Perez-Nicolas.git
+```
 
-### `npm test`
+<p align="center">
+<══════════════════════════════════════════════════════>
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Dependencias usadas en el proyecto:
 
-### `npm run build`
+-   Material UI
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   Firebase
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-   Formik
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   Yup
 
-### `npm run eject`
+-   React Icons
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-   Toastify2
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Instalación de dependencias e iniciado de proyecto:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Primero instalar dependencias anteriores, ponemos en consola:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+npm install
+```
 
-## Learn More
+Luego, una vez instaladas podemos correr nuestro proyecto con:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p align="center">
+<══════════════════════════════════════════════════════>
+</p>
 
-### Code Splitting
+### Para usar este proyecto como base para tus propios productos vas a necesitar variables de entorno, deberás crear el archivo .env en la ruta raíz de tu nuevo proyecto y asignarle los siguientes valores:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-   REACT_APP_APIKEY=
+-   REACT_APP_AUTHDOMAIN=
+-   REACT_APP_PROJECTID=
+-   REACT_APP_STORAGEBUCKET=
+-   REACT_APP_MESSAGINGSENDERID=
+-   REACT_APP_APPID=
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="center">
+══════════════════════════════════════════════════════
+</p>

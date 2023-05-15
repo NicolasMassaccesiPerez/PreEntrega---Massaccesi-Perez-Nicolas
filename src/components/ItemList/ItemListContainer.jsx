@@ -5,18 +5,19 @@ import ItemList from "./ItemList";
 import { database } from "../../firebaseConfig";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
+import { CircleLoader } from "react-spinners";
 
 export const ItemListContainer = () => {
     const [items, setItems] = useState([]);
 
-    const { categoryName } = useParams();
+    const { category } = useParams();
 
     useEffect(() => {
         let consulta;
         const itemCollection = collection(database, "products");
 
-        if (categoryName) {
-            const itemsCollectionFiltered = query(itemCollection, where("category", "==", categoryName));
+        if (category) {
+            const itemsCollectionFiltered = query(itemCollection, where("category", "==", category));
             consulta = itemsCollectionFiltered;
         } else {
             consulta = itemCollection;
@@ -35,12 +36,19 @@ export const ItemListContainer = () => {
             })
 
             .catch((err) => console.log(err));
-    }, [categoryName]);
+    }, [category]);
 
     return (
         <div>
             <Carousel />
-            <ItemList items={items} />
+
+            {items.length === 0 ? (
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                    <CircleLoader color="green" size={60} />
+                </div>
+            ) : (
+                <ItemList items={items} />
+            )}
         </div>
     );
 };

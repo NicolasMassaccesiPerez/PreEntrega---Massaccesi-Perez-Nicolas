@@ -16,29 +16,34 @@ const ItemCard = ({ item }) => {
             }}
         >
             <CardMedia sx={{ height: 240, backgroundSize: "contain" }} image={item.img} title="producto" />
-            <hr />
+            <br />
             <CardContent
                 sx={{
                     height: 80,
-                    backgroundColor: "white",
+                    backgroundColor: "black",
                     padding: "0",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                 }}
             >
-                <Typography gutterBottom variant="h5" component="div" textAlign={"center"} fontFamily={"revert"} fontSize={30}>
+                <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    textAlign={"center"}
+                    fontFamily={"revert"}
+                    fontSize={30}
+                    color={"white"}
+                >
                     {item.title}
                 </Typography>
             </CardContent>
-            <hr />
-            <CardActions style={{ display: "flex", justifyContent: "space-between", marginLeft: "10px" }}>
+            <br />
+            <CardActions style={{ display: "flex", justifyContent: "space-between", marginLeft: "10px", marginTop: "10px" }}>
                 <Link to={`/itemDetail/${item.id}`}>
-                    <Button variant="contained" style={{ backgroundColor: "green" }} size="small" sx={{ textTransform: "none" }}>
-                        Agregar al carrito{" "}
-                    </Button>
-                    <Button color="success" size="small" sx={{ textTransform: "none" }}>
-                        Ver detalle
+                    <Button variant="outlined" color="success" size="small" sx={{ textTransform: "none" }}>
+                        Ver detalle 🡦
                     </Button>
                 </Link>
                 <Typography variant="subtitle1" textAlign={"center"}>

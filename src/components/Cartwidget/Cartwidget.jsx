@@ -1,13 +1,28 @@
-import CarritoImg from "../../assets/img/cartwidget.png";
 import "./Cartwidget.css";
+import { BsFillBagFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
-export const Cartwidget = ({ onMouseEnter, onMouseLeave }) => {
+const Cartwidget = ({ onMouseEnter, onMouseLeave }) => {
+    const { getTotalQuantity } = useContext(CartContext);
+
+    let total = getTotalQuantity();
     return (
-        <div className="cartwidget" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-            <div>
-                <img src={CarritoImg} alt="" />
-                <span>1</span>
+        <Link to="/cart">
+            <div className="container-cart" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+                <BsFillBagFill
+                    style={{
+                        fontSize: "2rem",
+                        color: "beige",
+                    }}
+                />
+                <div className="bubble-counter">
+                    <span>{total}</span>
+                </div>
             </div>
-        </div>
+        </Link>
     );
 };
+
+export default Cartwidget;
