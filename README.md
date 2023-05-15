@@ -2,7 +2,7 @@
 
 ## Descripción del proyecto / About Project :
 
-Urban Outfitters es una empresa de impresion bajo demanda, que vende productos de calidad a buen precio alrededor del mundo.
+Urban Outfitters es una empresa de impresion bajo demanda, que vende productos de calidad a buen precio alrededor del mundo. /
 Urban Outfitters is a print-on-demand company, selling quality products at great prices around the world.
 
 <p align="center">
@@ -11,7 +11,7 @@ Urban Outfitters is a print-on-demand company, selling quality products at great
 
 ## Clonar repositorio / Clone repository:
 
-Copiar el siguiente comando en consola y luego presionar enter.
+Copiar el siguiente comando en consola y luego presionar enter. /
 Copy the following command in console and then press enter.
 
 ```
