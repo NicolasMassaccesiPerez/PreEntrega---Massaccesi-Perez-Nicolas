@@ -1,7 +1,23 @@
 import { Button, Grid, TextField } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
 const FormCheckout = ({ handleSubmit, handleChange, errors, values }) => {
+    const [showSubmitButton, setShowSubmitButton] = useState(false);
+
+    const handleFieldChange = (event) => {
+        handleChange(event);
+        validarCamposCompletos();
+    };
+
+    const validarCamposCompletos = () => {
+        const { nombre, email, phone } = values;
+        if (nombre && email && phone) {
+            setShowSubmitButton(true);
+        } else {
+            setShowSubmitButton(false);
+        }
+    };
+
     return (
         <div style={{ paddingTop: "100px" }}>
             <h2 style={{ color: "black", marginBottom: "30px" }}>Completa el formulario de compra con tus datos:</h2>
@@ -14,7 +30,7 @@ const FormCheckout = ({ handleSubmit, handleChange, errors, values }) => {
                             variant="outlined"
                             fullWidth
                             name="nombre"
-                            onChange={handleChange}
+                            onChange={handleFieldChange}
                             error={errors.nombre ? true : false}
                             helperText={errors.nombre}
                         />
@@ -26,7 +42,7 @@ const FormCheckout = ({ handleSubmit, handleChange, errors, values }) => {
                             variant="outlined"
                             fullWidth
                             name="email"
-                            onChange={handleChange}
+                            onChange={handleFieldChange}
                             error={errors.email ? true : false}
                             helperText={errors.email}
                         />
@@ -38,16 +54,18 @@ const FormCheckout = ({ handleSubmit, handleChange, errors, values }) => {
                             variant="outlined"
                             fullWidth
                             name="phone"
-                            onChange={handleChange}
+                            onChange={handleFieldChange}
                             error={errors.phone ? true : false}
                             helperText={errors.phone}
                         />
                     </Grid>
 
                     <Grid item xs={6}>
-                        <Button type="submit" variant="contained" sx={{ marginTop: 2, marginBottom: 24 }}>
-                            Enviar Datos
-                        </Button>
+                        {showSubmitButton && (
+                            <Button type="submit" variant="contained" sx={{ marginTop: 2, marginBottom: 24 }}>
+                                Enviar Datos
+                            </Button>
+                        )}
                     </Grid>
                 </Grid>
             </form>
